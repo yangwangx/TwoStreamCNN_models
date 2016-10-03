@@ -26,7 +26,7 @@ for i=1:23
     net.layers{i}.biases=reshape(biases,size(net.layers{i}.biases));
   end
 end
-net.input.format='W x H x [BGR] x S';
+net.input.format='W x H x [XY^10] x S';
 net.input.mean=128*ones(224,224,20,'single');
 t_net=net;
 save('temporal_net.mat','t_net');
